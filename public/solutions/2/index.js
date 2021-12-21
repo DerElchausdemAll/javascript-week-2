@@ -59,7 +59,7 @@ document.querySelector("#root").innerHTML += `
     <figure class="Card-media">
         <img src="https://randomuser.me/api/portraits/${randomItem(
           sex
-        )}/${random(50)}.jpg"/>
+        )}/${random(85)}.jpg"/>
     </figure>
     <div>
         <h4>My hobbies</h4>
