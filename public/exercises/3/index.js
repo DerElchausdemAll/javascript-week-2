@@ -57,6 +57,7 @@ const hobbies = ["Surfing", "Cooking", "Cinema", "Hiking", "Bouldering"];
 const gender = ["men", "women"];
 
 const people = Array.from({ length: 8 }).map(() => ({
+  // letzte ( nicht ganz klar
   firstName: randomItem(firstNames),
   lastName: randomItem(lastNames),
   photo: `https://randomuser.me/api/portraits/${randomItem(gender)}/${randomN(
