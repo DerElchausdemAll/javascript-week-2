@@ -23,53 +23,74 @@ console.log(`
 `);
 
 // 1.
+
 const element = document.querySelector("#root");
+
 const h1 = document.createElement("h1");
+
 element.append(h1);
+
 h1.innerHTML = "It works!";
 
-// element.innerHTML += "<div> Hallo I am added to the Headline with += </div>"
-// element.innerHTML = "<h1>It works!</h1>";
+h1.classList = "header";
 
-// 2.
-h1.className = "main-headline";
-// const test = `_${Math.round(Math.random() * 2000)}`;
-
-// 3.
 const head = document.querySelector("head");
-const style = document.createElement("style");
 
-head.append(style);
+head.innerHTML += /*html*/ `
+<style id="main-style">
+    h1 {
+        color: blue;
+    }
+</style>
+`;
 
-style.setAttribute("id", "main-style");
+// const element = document.querySelector("#root");
+// const h1 = document.createElement("h1");
+// element.append(h1);
+// h1.innerHTML = "It works!";
 
-// 4.
-// document.getElementById("main-style").style.color = "blue";
-style.innerHTML = ".main-headline {color: blue};";
-// h1.setAttribute("id", "main-style");
-//  style.innerHTML = `
-// .main-headline {
-//     color:blue
-// }`;
+// // element.innerHTML += "<div> Hallo I am added to the Headline with += </div>"
+// // element.innerHTML = "<h1>It works!</h1>";
 
-// style.innerHTML = `
-// .${test} {
-//     color:blue
-// }`;
+// // 2.
+// h1.className = "main-headline";
+// // const test = `_${Math.round(Math.random() * 2000)}`;
 
-// document.head.innerHTML += /*html*/
-// <style id="main-style">
-//     .main-headline {
-//     color: blue;
-//     }
-// </style>
+// // 3.
+// const head = document.querySelector("head");
+// const style = document.createElement("style");
 
-// head.innerHTML +=
-/*html*/
-// `
-// <style id="main-style">
-//     .main-headline {
-//         color: blue;
-//     }
-//     </style>
-// `
+// head.append(style);
+
+// style.setAttribute("id", "main-style");
+
+// // 4.
+// // document.getElementById("main-style").style.color = "blue";
+// style.innerHTML = ".main-headline {color: blue};";
+// // h1.setAttribute("id", "main-style");
+// //  style.innerHTML = `
+// // .main-headline {
+// //     color:blue
+// // }`;
+
+// // style.innerHTML = `
+// // .${test} {
+// //     color:blue
+// // }`;
+
+// // document.head.innerHTML += /*html*/
+// // <style id="main-style">
+// //     .main-headline {
+// //     color: blue;
+// //     }
+// // </style>
+
+// // head.innerHTML +=
+// /*html*/
+// // `
+// // <style id="main-style">
+// //     .main-headline {
+// //         color: blue;
+// //     }
+// //     </style>
+// // `

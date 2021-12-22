@@ -1,0 +1,90 @@
+// const root = document.querySelector("#root");
+
+// const form = document.createElement("form");
+
+// root.append(form);
+
+// form.innerHTML = /*html*/ `
+// <label>
+// E-Mail:<input type="email" name="email"/>
+// </label>
+// <button type="submit"> Subscribe</button>
+// `;
+
+// form.addEventListener("submit", function (event_) {
+//   console.log(event_);
+//   event_.preventDefault(); //verhindert
+//   const formData = new FormData(event_.target); // event_.target === formData
+//   console.log(formData);
+// });
+
+// const root = document.querySelector("#root");
+
+// const store = window.localStorage.getItem("email-adress");
+// if (store) {
+//   root.innerHTML = /*html*/ `
+//   <div class="subscribed"> Thank you fpr subscring </div>
+
+//   `;
+// } else {
+//   const form = document.createElement("form");
+
+//   root.append(form);
+
+//   form.innerHTML = /*html*/ `
+//     <label>
+//         Email: <input type="email" name="email" placeholder="test@gmail.de" required/>
+//     </label>
+//     <button type="submit">Subscribe</button>
+
+// `;
+//   form.addEventListener("submit", function (event_) {
+//     console.log(event_);
+//     event_.preventDefault();
+//     const formData = new FormData(event_.target); // event_.target === form
+//     const email = formData.get("email");
+
+//     //   if (Boolean(email)) {              // not needed because field is required
+//     window.localStorage.setItem("email-adress", email);
+//     root.innerHTML = /*html*/ `
+
+//   <div class="subscribed"> Thank you fpr subscring </div>
+
+//   `;
+//     //   }          //brauchen wir nicht, gehört zum Boolean oben!
+//   });
+// }
+
+///////////////////////////////////
+
+const root = document.querySelector("#root");
+const stored = window.localStorage.getItem("email-address");
+if (stored) {
+  root.innerHTML = /*html*/ `
+    <div class="subscribed">You are subscribed</div>
+  `;
+} else {
+  const form = document.createElement("form");
+
+  root.append(form);
+
+  form.innerHTML = /*html*/ `
+    <label>
+    Email: <input type="email" name="email" required/>
+    </label>
+    <button type="submit">Subscribe</button>
+`;
+
+  form.addEventListener("submit", function (event_) {
+    event_.preventDefault(); // verhindert neuladen der Seite
+    const formData = new FormData(event_.target); // erschafft Object mit key und value, event_.target === form
+    const email = formData.get("email");
+
+    //   if (Boolean(email)) {
+    window.localStorage.setItem("email-address", email);
+    root.innerHTML = /*html*/ `
+    <div class="subscribed">Thank you for subscribing</div>
+  `;
+    //   }
+  });
+}

@@ -44,3 +44,41 @@ Run the tests via 'npm run cypress:open'
 All tests should pass
 
 `);
+
+const root = document.querySelector("#root");
+
+root.innerHTML +=
+  /*html*/
+  `
+<head><link rel="stylesheet" href="style.css"></head>
+<div class="wrapper">
+    <header>
+        <button class="menu">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+            </svg>
+        </button>
+    </header>
+    <nav class="sidebar">
+    <ul>
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </ul>
+    </nav>
+    <div class="content">
+            HELLO USER!
+    </div>
+
+</div>
+
+`;
+
+const menubutton = document.querySelector(".menu");
+
+const navigation = document.querySelector(".sidebar");
+
+menubutton.addEventListener("click", () => {
+  navigation.classList.toggle("navbar--show");
+});
