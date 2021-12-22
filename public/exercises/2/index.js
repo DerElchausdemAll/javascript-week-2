@@ -33,7 +33,9 @@ const names = ["Lorenz", "Berta", "Jesus", "Dieter", "Ole"]; //<-- array
 
 const lastNames = ["Schmidt", "Piet", "Grün", "Christus", "Block"];
 
-const sex = ["men", "women"];
+const hobbies = ["Surfing", "Cooking", "Cinema", "Hiking", "Bouldering"];
+
+const gender = ["men", "women"];
 
 function randomN(n) {
   return Math.round(Math.random() * n);
@@ -49,26 +51,26 @@ function randomItem(array) {
 }
 // console.log(randomItem(names));
 
-document.querySelector("#root").innerHTML += `
+document.querySelector("#root").innerHTML += /*html*/ `
     <div class="card">
-        <header class="card__header>
+        <header class="card__header">
             <h3 class="card__header--names">
             ${randomItem(names)} ${randomItem(lastNames)}
             </h3>
         </header>
-        <figure card__img>
+        <div class="card__img">
             <img src="https://randomuser.me/api/portraits/${randomItem(
-              sex
-            )}/${randomN(50)}.jpg"/>
-        </figure>
+              gender
+            )}/${randomN(99)}.jpg"/>
+        </div>
         <div>
             <h4>
                 My hobbies
             </h4>
             <ul>
-                <li>surfing</li>
-                <li>cinema</li>
-                <li>bouldering</li>
+                <li>${randomItem(hobbies)}</li>
+                <li>${randomItem(hobbies)}</li>
+                <li>${randomItem(hobbies)}</li>
             </ul>
         </div>
     </div>
@@ -76,8 +78,8 @@ document.querySelector("#root").innerHTML += `
 
 const head = document.querySelector("head");
 
-head.innerHTML += `
-<link rel="stylesheet" href="/public/exercises/2/style.css">
+head.innerHTML += /*html*/ `
+<link rel="stylesheet" href="style.css">
 <style> * {
     box-sizing: border-box;
 }
@@ -88,3 +90,5 @@ head.innerHTML += `
 `;
 
 // const style = document.createElement("style");
+// head.append(style);
+// style.innerHTML = ` `;
